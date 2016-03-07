@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Position implements Horientable {
+public class Position implements Orientable {
     private int x;
     private int y;
     private char cardinality;
