@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Position implements Horientable{
+public class Position implements Horientable {
     private int x;
     private int y;
     private char cardinality;
@@ -17,5 +17,9 @@ public class Position implements Horientable{
         this.x = x;
         this.y = y;
         this.cardinality = cardinality;
+    }
+
+    public String toString() {
+        return this.x + " " + this.y + " " + this.cardinality;
     }
 }

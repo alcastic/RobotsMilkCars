@@ -3,6 +3,7 @@ package cl.alcastic;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
@@ -31,5 +32,11 @@ public class PositionTest {
         char expectedCardinality = Position.SOUTH;
         position.setCardinality(expectedCardinality);
         assertSame(expectedCardinality, position.getCardinality());
+    }
+
+    @Test
+    public void whenToStringMethodIsCalled(){
+        String expectedString = "0 0 N";
+        assertEquals(expectedString, position.toString());
     }
 }

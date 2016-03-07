@@ -7,7 +7,7 @@ import lombok.Getter;
  */
 @Getter
 public class MilkCar {
-    Position position;
+    private Position position;
 
     public MilkCar(Position position) {
         this.position = position;

@@ -6,8 +6,6 @@ import lombok.Setter;
 /**
  * Created by acastillo on 07-03-16.
  */
-@Getter
-@Setter
 public class Region {
     private int height;
     private int width;
