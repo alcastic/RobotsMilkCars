@@ -1,7 +1,6 @@
 # Compiled Files.
 *.class
 *.jar
-*.war
 
 # IDE
 .idea/
