@@ -32,5 +32,5 @@ La salida de cada vehículo debe ser sus coordenadas y la dirección finales.
     
 ###Salida esperada###
 
-    1 3 NM
+    1 3 N
     5 1 E
