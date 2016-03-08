@@ -30,11 +30,11 @@ public class Driver {
                 default:
                     throw new CommandNotFoundException();
             }
-            if (!region.isInside(milkCar.getPosition().getX(), milkCar.getPosition().getY())) {
+            if (!region.isInside(milkCar.getLocation().getX(), milkCar.getLocation().getY())) {
                 throw new CrashException();
             }
         }
-        return milkCar.getPosition().toString();
+        return milkCar.getLocation().toString();
     }
 
     public class CrashException extends RuntimeException {

@@ -7,60 +7,60 @@ import lombok.Getter;
  */
 @Getter
 public class MilkCar {
-    private Position position;
+    private Location location;
 
-    public MilkCar(Position position) {
-        this.position = position;
+    public MilkCar(Location location) {
+        this.location = location;
     }
 
     public void turnRight() {
-        switch (this.position.getCardinality()) {
-            case Position.NORTH:
-                position.setCardinality(Position.EAST);
+        switch (this.location.getCardinality()) {
+            case Location.NORTH:
+                location.setCardinality(Location.EAST);
                 break;
-            case Position.EAST:
-                position.setCardinality(Position.SOUTH);
+            case Location.EAST:
+                location.setCardinality(Location.SOUTH);
                 break;
-            case Position.SOUTH:
-                position.setCardinality(Position.WEST);
+            case Location.SOUTH:
+                location.setCardinality(Location.WEST);
                 break;
-            case Position.WEST:
-                position.setCardinality(Position.NORTH);
+            case Location.WEST:
+                location.setCardinality(Location.NORTH);
                 break;
         }
 
     }
 
     public void turnLeft() {
-        switch (this.position.getCardinality()) {
-            case Position.NORTH:
-                position.setCardinality(Position.WEST);
+        switch (this.location.getCardinality()) {
+            case Location.NORTH:
+                location.setCardinality(Location.WEST);
                 break;
-            case Position.WEST:
-                position.setCardinality(Position.SOUTH);
+            case Location.WEST:
+                location.setCardinality(Location.SOUTH);
                 break;
-            case Position.SOUTH:
-                position.setCardinality(Position.EAST);
+            case Location.SOUTH:
+                location.setCardinality(Location.EAST);
                 break;
-            case Position.EAST:
-                position.setCardinality(Position.NORTH);
+            case Location.EAST:
+                location.setCardinality(Location.NORTH);
                 break;
         }
     }
 
     public void move() {
-        switch (this.position.getCardinality()) {
-            case Position.NORTH:
-                this.getPosition().setY(this.position.getY() + 1);
+        switch (this.location.getCardinality()) {
+            case Location.NORTH:
+                this.getLocation().setY(this.location.getY() + 1);
                 break;
-            case Position.EAST:
-                this.getPosition().setX(this.position.getX() + 1);
+            case Location.EAST:
+                this.getLocation().setX(this.location.getX() + 1);
                 break;
-            case Position.SOUTH:
-                this.getPosition().setY(this.position.getY() - 1);
+            case Location.SOUTH:
+                this.getLocation().setY(this.location.getY() - 1);
                 break;
-            case Position.WEST:
-                this.getPosition().setX(this.position.getX() - 1);
+            case Location.WEST:
+                this.getLocation().setX(this.location.getX() - 1);
                 break;
         }
 

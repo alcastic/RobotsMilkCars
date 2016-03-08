@@ -21,16 +21,16 @@ public class DriverTest {
 
     @Test
     public void canCreateADriver() {
-        Position position = new Position(0, 0, Position.NORTH);
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(0, 0, Location.NORTH);
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         assertNotNull(driver);
     }
 
     @Test
     public void whenDrivingWithCorrectDataTestCaseOne() {
-        Position position = new Position(1, 2, Position.NORTH);
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(1, 2, Location.NORTH);
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "IMIMIMIMM";
         String expectedOutPut = "1 3 N";
@@ -39,8 +39,8 @@ public class DriverTest {
 
     @Test
     public void whenDrivingWithCorrectDataTestCaseTwo() {
-        Position position = new Position(3, 3, Position.EAST);
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(3, 3, Location.EAST);
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "MMDMMDMDDM";
         String expectedOutPut = "5 1 E";
@@ -49,8 +49,8 @@ public class DriverTest {
 
     @Test(expected = Driver.CommandNotFoundException.class)
     public void whenAnInstructionIsInvalid(){
-        Position position = new Position(x, 5, Position.NORTH);
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(x, 5, Location.NORTH);
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "IR";
         driver.drive(instruction);
@@ -58,8 +58,8 @@ public class DriverTest {
 
     @Test(expected = Driver.CrashException.class)
     public void whenCrashByTheNorth() {
-        Position position = new Position(x, 5, Position.NORTH); // x value can be 0,1,2,3,4,5
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(x, 5, Location.NORTH); // x value can be 0,1,2,3,4,5
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "M";
         driver.drive(instruction);
@@ -67,8 +67,8 @@ public class DriverTest {
 
     @Test(expected = Driver.CrashException.class)
     public void whenCrashByTheEAST() {
-        Position position = new Position(5, y, Position.EAST); // y value can be 0,1,2,3,4,5
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(5, y, Location.EAST); // y value can be 0,1,2,3,4,5
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "M";
         driver.drive(instruction);
@@ -76,8 +76,8 @@ public class DriverTest {
 
     @Test(expected = Driver.CrashException.class)
     public void whenCrashByTheSouth() {
-        Position position = new Position(x, 0, Position.SOUTH); // x value can be 0,1,2,3,4,5
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(x, 0, Location.SOUTH); // x value can be 0,1,2,3,4,5
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "M";
         driver.drive(instruction);
@@ -85,8 +85,8 @@ public class DriverTest {
 
     @Test(expected = Driver.CrashException.class)
     public void whenCrashByTheWest() {
-        Position position = new Position(0, y, Position.WEST); // y value can be 0,1,2,3,4,5
-        MilkCar milkCar = new MilkCar(position);
+        Location location = new Location(0, y, Location.WEST); // y value can be 0,1,2,3,4,5
+        MilkCar milkCar = new MilkCar(location);
         Driver driver = new Driver(milkCar, region);
         String instruction = "M";
         driver.drive(instruction);
